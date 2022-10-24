@@ -1,0 +1,294 @@
+/* Text properties */
+/* Primary and secondary color */
+/* Colors */
+/* Sizes */
+/* Breakpoints */
+/* Mixins for startpage with hero image and nav */
+/* Mixins for icons */
+/* Text and font properties */
+/* Profile-section */
+.startpage-container {
+  background-image: url("/src/images/negative-space-black-forest-dawn.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.startpage-container .header .header-items li .list-item:hover,
+.startpage-container .header .menu-btn:hover {
+  text-decoration: underline;
+}
+.startpage-container .header {
+  background-color: rgba(255, 255, 255, 0.101);
+  width: 100%;
+  position: absolute;
+}
+.startpage-container .header .header-items {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.047);
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+.startpage-container .header .header-items li .list-item {
+  text-decoration: none;
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  color: white;
+}
+.startpage-container .header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+}
+.startpage-container .header .menu-icon .navicon {
+  background: rgb(255, 255, 255);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+.startpage-container .header .menu-icon .navicon:active {
+  display: block;
+  background-color: rgb(0, 153, 255);
+}
+.startpage-container .header .menu-btn {
+  display: none;
+}
+.startpage-container .header .menu-icon .navicon:before,
+.startpage-container .header .menu-icon .navicon:after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+.startpage-container .header .menu-icon .navicon:before {
+  top: 5px;
+}
+.startpage-container .header .menu-icon .navicon:after {
+  top: -5px;
+}
+.startpage-container .header .menu-btn:checked ~ .header-items {
+  max-height: 240px;
+}
+.startpage-container .header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.startpage-container .header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.startpage-container .header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.startpage-container .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.startpage-container .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.startpage-container .startpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  padding: 15vh 25%;
+  height: 100vh;
+}
+.startpage-container .startpage .arrow-down {
+  margin-top: 30vh;
+  font-size: 1.5em;
+  color: white;
+}
+.startpage-container .startpage .arrow-down:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1200px) {
+  .startpage-container {
+    margin: 0;
+  }
+  .startpage-container .header {
+    display: flex;
+    justify-content: right;
+    height: 50px;
+  }
+  .startpage-container .header li {
+    float: right;
+  }
+  .startpage-container .header li .list-item {
+    padding: 20px 30px;
+  }
+  .startpage-container .header .header-items {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .startpage-container .header .menu-icon {
+    display: none;
+  }
+}
+.secondsection {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: auto;
+}
+.secondsection__heading {
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+/* Styling for team members sorted in an unordered list + styling of list items with contents */
+.team-section ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: space-between;
+}
+
+.secondsection ul {
+  list-style-type: none;
+  justify-content: space-around;
+  margin: 0;
+  padding: 20px;
+}
+.secondsection ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+}
+.secondsection ul li:first-child {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Styling for all p tags in list item tags */
+li p {
+  font-size: large;
+}
+
+/* Styling all articles in secondsection-container */
+.secondsection article {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Rounded border for profile img */
+img {
+  border-radius: 50%;
+  border: 2px solid rgb(200, 200, 200);
+  box-shadow: 0px 0px 10px 10px rgb(200, 200, 200);
+}
+
+/* Styling for the grey textbox with curly marks */
+.team__greybox {
+  background-color: rgb(200, 200, 200);
+  width: 300px;
+  height: 150px;
+  border-radius: 10%;
+  display: flex;
+  color: black;
+  font-family: "Times New Roman", serif;
+  margin-top: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  line-height: 1rem;
+  text-align: center;
+}
+.team__greybox p {
+  font-size: 1em;
+  white-space: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.team__greybox p::first-letter {
+  font-size: 4em;
+  margin-top: 0px;
+  margin-right: 10px;
+}
+
+.arrow-down {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.arrow-down:hover {
+  cursor: pointer;
+}
+
+/* Styling changes for desktop-breakpoint */
+@media screen and (min-width: 1200px) {
+  .secondsection {
+    display: flex;
+    width: 100vw;
+  }
+  .profile-row {
+    display: flex;
+    margin-bottom: 100px;
+    margin-top: 10px;
+    flex-direction: row;
+  }
+  ul {
+    flex: 50%;
+    width: 400px;
+    height: 400px;
+  }
+  .secondsection li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+  }
+}
+#footer {
+  display: flex;
+  height: 300px;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  align-content: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+@media screen and (min-width: 1200px) {
+  #footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+body, html {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  scroll-behavior: smooth;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/*# sourceMappingURL=main.css.map */

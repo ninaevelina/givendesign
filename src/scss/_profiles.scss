@@ -1,0 +1,167 @@
+@use "variables";
+@use "mixins";
+
+.secondsection {
+
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-top:auto;
+
+
+    &__heading {
+
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+
+    }
+
+ 
+
+}
+
+/* Styling for team members sorted in an unordered list + styling of list items with contents */
+
+.team-section ul {
+
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: space-between;
+
+}
+
+.secondsection ul {
+
+    list-style-type: none;
+    justify-content: space-around;
+    margin: 0;
+    padding: 20px;
+
+    li { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    }
+
+    li:first-child {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+}
+
+/* Styling for all p tags in list item tags */
+
+li p {
+    font-size: large;
+}
+
+
+/* Styling all articles in secondsection-container */
+
+.secondsection article {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* Rounded border for profile img */
+img {
+    border-radius: 50%;
+    border: 2px solid variables.$grey-color;
+    box-shadow: 0px 0px 10px 10px variables.$grey-color;
+}
+
+
+
+/* Styling for the grey textbox with curly marks */
+
+.team__greybox {
+    
+    @include mixins.grey-box;
+    @include mixins.black-text;
+    margin-top: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 1rem;
+    text-align: center;
+    
+
+    p {
+        
+        font-size: 1em;
+        white-space: wrap;
+        text-align:center;
+        justify-content: center;
+        
+        
+    }
+
+    p::first-letter {
+        font-size: 4em;
+        margin-top: 0px;
+        margin-right: 10px;
+      
+    }   
+}
+
+.arrow-down {
+    @include mixins.arrow-down(variables.$secondary);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* Styling changes for desktop-breakpoint */
+
+@include mixins.desktopscreen {
+
+    .secondsection {
+
+        display: flex;
+        width: 100vw;
+          
+    }
+
+    .profile-row {
+
+        display: flex;
+        margin-bottom: 100px;
+        margin-top: 10px;
+        flex-direction: row;
+    }
+    
+
+    ul {
+       flex: 50%;
+       width: 400px;
+       height: 400px;
+       
+         
+        
+    }
+
+    .secondsection li {
+
+    display: flex;
+    flex-direction: row;   
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+        
+    }
+
+}

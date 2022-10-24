@@ -1,0 +1,93 @@
+@use "variables";
+
+/* Breakpoints */
+
+@mixin desktopscreen {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+
+
+/* Mixins for startpage with hero image and nav */
+
+@mixin bg-image {
+    background-image: url("/src/images/negative-space-black-forest-dawn.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+@mixin container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Mixins for icons */
+
+@mixin arrow-down($color) {
+    font-size: 1.5em;
+    color: $color;
+  
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+@mixin layout {
+    margin: 0;
+    width: 100vw;
+    
+}
+
+
+
+/* Text and font properties */
+
+@mixin white-text {
+    color: white;
+    font-family: "Times New Roman", serif;
+}
+
+@mixin black-text {
+    color: black;
+    font-family: "Times New Roman", serif ;
+}
+
+/* Profile-section */
+
+@mixin grey-box {
+    background-color: variables.$grey-color;
+    width: 300px;
+    height: 150px;
+    border-radius: 10%;
+    display: flex;
+    
+}
+
+@mixin columned-divs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+  
+@mixin centered-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  
+@mixin profile-layout {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

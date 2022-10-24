@@ -1,0 +1,142 @@
+@use "variables";
+@use "mixins";
+
+.startpage-container {
+  @include mixins.bg-image;
+  height: 100vh;
+
+  .header .header-items li .list-item:hover,
+  .header .menu-btn:hover {
+    text-decoration: underline;
+  }
+
+  .header {
+    background-color: rgba(255, 255, 255, 0.101);
+    width: 100%;
+    position: absolute;
+
+    .header-items {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      list-style: none;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.047);
+      clear: both;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+
+      li .list-item {
+        text-decoration: none;
+        display: block;
+        padding: 20px 20px;
+        text-decoration: none;
+        color: variables.$primary;
+      }
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+
+      .navicon {
+        background: rgb(255, 255, 255);
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+
+        &:active {
+          display: block;
+          background-color: rgb(0, 153, 255);
+        }
+      }
+    }
+    .menu-btn {
+      display: none;
+    }
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #fff;
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  .header .menu-btn:checked ~ .header-items {
+    max-height: 240px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+
+  .startpage {
+    @include mixins.container;
+    flex-direction: column;
+    text-align: center;
+    color: variables.$primary;
+    padding: 15vh 25%;
+    height: 100vh;
+
+    .arrow-down {
+      margin-top: 30vh;
+      @include mixins.arrow-down(variables.$primary);
+    }
+  }
+}
+
+@include mixins.desktopscreen {
+  .startpage-container {
+    margin: 0;
+    .header {
+      display: flex;
+      justify-content: right;
+      height: 50px;
+    }
+    .header li {
+      float: right;
+      .list-item {
+        padding: 20px 30px;
+      }
+    }
+
+    .header .header-items {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+}

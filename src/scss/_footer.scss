@@ -1,0 +1,23 @@
+@use "variables";
+@use "mixins";
+
+#footer {
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    text-align: center;
+    background-color: variables.$secondary;
+    color: variables.$primary;
+    justify-content: center;
+    align-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include mixins.desktopscreen {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+}
