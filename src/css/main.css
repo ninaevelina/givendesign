@@ -103,6 +103,7 @@
   color: white;
   padding: 15vh 25%;
   height: 100vh;
+  margin: 0;
 }
 .startpage-container .startpage .arrow-down {
   margin-top: 30vh;
@@ -142,6 +143,7 @@
   flex-direction: column;
   width: 100vw;
   margin-top: auto;
+  margin: 0;
 }
 .secondsection__heading {
   text-align: center;
@@ -273,6 +275,7 @@ img {
   align-content: center;
   padding-top: 15px;
   padding-bottom: 15px;
+  margin: 0;
 }
 @media screen and (min-width: 1200px) {
   #footer {
@@ -280,6 +283,7 @@ img {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: 0;
   }
 }
 
@@ -289,6 +293,10 @@ body, html {
   width: 100vw;
   scroll-behavior: smooth;
   font-family: "Times New Roman", Times, serif;
+}
+
+section {
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

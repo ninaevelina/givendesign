@@ -4,6 +4,7 @@
 .startpage-container {
   @include mixins.bg-image;
   height: 100vh;
+  
 
   .header .header-items li .list-item:hover,
   .header .menu-btn:hover {
@@ -107,6 +108,7 @@
     color: variables.$primary;
     padding: 15vh 25%;
     height: 100vh;
+    margin: 0;
 
     .arrow-down {
       margin-top: 30vh;

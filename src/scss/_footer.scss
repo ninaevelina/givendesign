@@ -12,12 +12,14 @@
     align-content: center;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin: 0;
 
     @include mixins.desktopscreen {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        margin: 0;
         
     }
 }
